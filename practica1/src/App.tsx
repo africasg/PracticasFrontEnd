@@ -12,32 +12,43 @@ const App = () => {
   const [loading,setLoading] =useState<boolean>(true);
   const [error,setError] = useState<string|null> (null);
   let miUrl = "https://swapi.dev/api/people/"
-
+  const limitePag:number =10;
+  
   useEffect(()=>{
+  
   miUrl= miUrl + `?page=${pagina}`
   axios.get(miUrl)
   .then(res=>{
     setCharacters([...characters, ...res.data.results])
     setError(null)
+   
   })
-  .catch((e)=>{
-    setError(`Error cargando los datos: ${e.message ? e.message:e}`);
-  })
-  .finally(()=>{
-    setLoading(false)
-  })
+      .catch((e) => {
+        if(pagina>=limitePag)alert("No hay más personajes :(")
+        else{
+        setError(`Error cargando los datos: ${e.message ? e.message : e}`);
+        }
+      
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+
   },[pagina])
-  
+
   return (
-    <>
-    <div className='General'>
+    <> 
+    <div className='General'> 
+     
      <h1>Lista de personajes de Star Wars </h1>
      {loading && <Loading/>}
      {error && <Errorcillo error={error}/>}
       <div>
        <CharacterList characters= {characters}/>
-      <button onClick={() => setPagina(pagina + 1)}>Siguiente Página </button>
       </div>
+      {/* Saco el button del div para que no rompa la estructura */}
+            <button onClick={() => setPagina(pagina + 1)}>Siguiente Página </button>
+
       </div>
     </>
   )
