@@ -3,7 +3,7 @@ Para empezar, clonar el repositorio de GitHub con el siguiente comando:
 git clone https://github.com/africasg/PracticasFrontEnd.git
 Entrar en la carpeta de la práctica:
 cd PracticasFrontEnd
-cd practica2
+cd practica3
 Instalar las dependencias:
 npm install
 Ejecutar:
