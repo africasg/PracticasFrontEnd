@@ -1,6 +1,7 @@
 'use client'
 
 import { Product } from "@/app/types"
+import "./page.css"
 type Props= {
    productos: Product[]
 }

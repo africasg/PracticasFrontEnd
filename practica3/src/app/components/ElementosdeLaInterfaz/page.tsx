@@ -3,7 +3,7 @@
 import { Product } from "@/app/types"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
-
+import "./page.css"
 type Props = {
     producto: Product
 }
@@ -34,7 +34,7 @@ const ElementosDeLaInterfaz = ({producto}: Props) =>{
                 })}>→ </button> 
                 </>
             </div>
-            <div className="compra/info">
+            <div className="compra-info">
                 <p>La disponibilidad es: {producto.stock}</p>
                 <p>El precio es: {producto.price}</p>
             </div>

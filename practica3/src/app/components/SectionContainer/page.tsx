@@ -1,3 +1,5 @@
+import "@/app/page.css"
+
 type Props = {
   children: React.ReactNode;
 };

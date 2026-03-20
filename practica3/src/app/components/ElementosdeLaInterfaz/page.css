@@ -1,0 +1,38 @@
+.contenedorPrincipal {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.imagenes {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.imagenes img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.imagenes button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.imagenes button:first-of-type {
+  left: 10px;
+}
+
+.imagenes button:last-of-type {
+  right: 10px;
+}
+.compra-info {
+  font-size: 1.1rem;
+}

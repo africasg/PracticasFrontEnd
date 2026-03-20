@@ -1,4 +1,5 @@
 "use client"
+import "./page.css"
 
 import { Product } from "@/app/types";
 import { ProductCard } from "../ProductCard/page";

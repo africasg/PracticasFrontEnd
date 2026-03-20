@@ -3,22 +3,25 @@
 import { Product } from "@/app/types"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
+import { api } from "@/app/lib/api/axios"
 import "./product.css"
 
 export const ProductCard = (params: { product?: Product; id?: number }) => {
   const router = useRouter();
-
   const paramsProduct = params.product;
   const id = params.id;
-
   const [product, setProduct] = useState<Product | null>(
     paramsProduct ? paramsProduct : null
   );
   useEffect(() => {
     if (!product && id) {
-      fetch(`https://dummyjson.com/products/${id}`)
-        .then(res => res.json())
-        .then(data => setProduct(data));
+      api.get(`/products/${id}`)
+        .then((res) => {
+          setProduct(res.data);
+        })
+        .catch((error) => {
+          console.error("Error cargando producto:", error);
+        });
     }
   }, [id]);
   return (
@@ -29,6 +32,7 @@ export const ProductCard = (params: { product?: Product; id?: number }) => {
             src={product?.thumbnail}
             alt={product?.title}
           />
+          </div>
           <div className="productDataContainer">
             <h3 className="titleContainer">
               {product?.title}
@@ -50,6 +54,6 @@ export const ProductCard = (params: { product?: Product; id?: number }) => {
           </div>
         </div>
       </div>
-    </div>
+  
   );
 };

@@ -1,0 +1,16 @@
+.resultadosContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 0 2rem;
+}
+
+.resultadoTexto {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.resultadoTexto span {
+  font-weight: bold;
+  color: #111;
+}
