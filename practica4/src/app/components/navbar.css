@@ -1,0 +1,33 @@
+.navbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 12px 20px;
+  background: white;
+  border-bottom: 1px solid #e6ecf0;
+}
+
+
+.nav-izq {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-izq a {
+  font-weight: 600;
+  color: #0f1419;
+}
+
+
+.nav-der button {
+  background: #1d9bf0;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.nav-der button:hover {
+  background: #0d8ae0;
+}

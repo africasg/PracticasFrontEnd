@@ -1,0 +1,24 @@
+.crear-post {
+  display: flex;
+  gap: 10px;
+}
+
+.crear-post input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.crear-post button {
+  padding: 10px;
+  border: none;
+  background: #0070f3;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.crear-post button:hover {
+  background: #0059c1;
+}
